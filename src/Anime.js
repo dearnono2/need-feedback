@@ -23,6 +23,45 @@ export const flying = keyframes`
   }
 `;
 
+// PreRegistration 섹션 popup 애니메이션
+// eggshell dino
+export const swaying = keyframes`
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+`;
+
+export const heart = keyframes`
+  0% {
+    transform: translate(2%, 4%) rotate(-20deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(2%, 2%) rotate(-25deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(2%, 0%) rotate(-20deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(2%, -2%) rotate(-15deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(2%, -4%) rotate(-10deg);
+    opacity: 0;
+  }
+`;
+
 // GameIntroduction 섹션 애니메이션
 export const movingCloud = keyframes`
   0% {

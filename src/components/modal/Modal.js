@@ -2,9 +2,14 @@ import { useState } from "react";
 
 import styled from "styled-components";
 
+import EggDinoModal from "./EggDinoModal";
+
 export const Modal = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  return <ModalContainer></ModalContainer>;
+  return (
+    <ModalContainer>
+      <EggDinoModal></EggDinoModal>
+    </ModalContainer>
+  );
 };
 
 const ModalContainer = styled.div`
@@ -14,5 +19,6 @@ const ModalContainer = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
 `;

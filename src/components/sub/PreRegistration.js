@@ -1,13 +1,20 @@
 import styled, { keyframes } from "styled-components";
 import * as Anime from "../../Anime";
+import { Modal } from "../modal/Modal";
 // animation libraries
 import { gsap } from "gsap";
 import Lottie from "lottie-react";
 import Gifts from "../../lottie/birthday-gifts.json";
 
-import { useLayoutEffect, useRef, useMemo } from "react";
+import { useLayoutEffect, useRef, useMemo, useState } from "react";
 
 const PreRegistration = () => {
+  // 버튼 클릭하면 팝업 튀어나오게
+  const [isOpen, setIsOpen] = useState(false);
+  const modalHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   const presentDino = useRef();
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -115,7 +122,7 @@ const PreRegistration = () => {
             </div>
           </form>
           <button>
-            <span>Pre-Register</span>
+            <span onClick={modalHandler}>Pre-Register</span>
           </button>
           <ul className="precautions">
             {/* <li>Precautions</li>
@@ -131,6 +138,7 @@ const PreRegistration = () => {
           </ul>
         </div>
       </div>
+      <Modal></Modal>
     </Wrapper>
   );
 };
@@ -340,5 +348,10 @@ const Wrapper = styled.section`
     }
   }
 `;
+
+// 이거 수정 필요... 안되는듯
+// const Modal = styled.div`
+//   display: isOpen ? "block":"none"
+// `
 
 export default PreRegistration;
