@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import * as Anime from "../../Anime";
 
-const EggDinoModal = () => {
+const EggDino = ({ onClose }) => {
   return (
     <Wrapper>
       <div className="egg-dino-container">
@@ -24,7 +24,7 @@ const EggDinoModal = () => {
             alt="heart animation"
           />
         </div>
-        <span className="close-btn"></span>
+        <span className="close-btn" onClick={onClose}></span>
         <p>You have successfully pre-registered!</p>
       </div>
     </Wrapper>
@@ -41,17 +41,17 @@ const Wrapper = styled.div`
     max-height: 688px;
     width: 100%;
     height: 100%;
-    div {
+    > div {
       position: absolute;
       width: 100%;
       height: 100%;
-      .eggshell {
+      &.eggshell {
       }
-      .egg-dino {
-        animation: ${Anime.swaying} 5s linear infinite;
+      &.egg-dino {
+        animation: ${Anime.swaying} 2s linear infinite;
       }
-      .heart {
-        animation: ${Anime.heart} 5s linear infinite;
+      &.heart {
+        animation: ${Anime.heart} 2s linear infinite;
       }
       img {
         width: 100%;
@@ -82,4 +82,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default EggDinoModal;
+export default EggDino;

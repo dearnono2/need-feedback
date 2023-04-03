@@ -1,6 +1,8 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import * as Anime from "../../Anime";
 import { Modal } from "../modal/Modal";
+import EggDino from "../modal/EggDino";
+
 // animation libraries
 import { gsap } from "gsap";
 import Lottie from "lottie-react";
@@ -10,10 +12,7 @@ import { useLayoutEffect, useRef, useMemo, useState } from "react";
 
 const PreRegistration = () => {
   // 버튼 클릭하면 팝업 튀어나오게
-  const [isOpen, setIsOpen] = useState(false);
-  const modalHandler = () => {
-    setIsOpen(!isOpen);
-  };
+  const [openModal, setOpenModal] = useState(false);
 
   const presentDino = useRef();
   useLayoutEffect(() => {
@@ -56,7 +55,7 @@ const PreRegistration = () => {
       <div className="bg-pattern"></div>
       <div className="inner">
         <div className="gifts">
-          <Lottie animationData={Gifts} isClickToPauseDisabled />
+          <Lottie animationData={Gifts} />
         </div>
 
         <div className="img-container">
@@ -121,24 +120,19 @@ const PreRegistration = () => {
               </div>
             </div>
           </form>
-          <button>
-            <span onClick={modalHandler}>Pre-Register</span>
+          <button onClick={() => setOpenModal(true)}>
+            <span>Pre-Register</span>
           </button>
           <ul className="precautions">
-            {/* <li>Precautions</li>
-            <li>A confirmation email will be sent.</li>
-            <li>Please check the mail to complete the pre-registration.</li>
-            <li>Please check your spam mailbox if you cannot find the mail.</li>
-            <li>Pre-registration rewards will be given 1 time per account.</li>
-            <li>Rewards will be sent to in-game mailbox.</li>
-            <li>%사전예약 혜택 내용% reward</li> */}
             {precautionsList.map((v, i) => (
               <li key={i}>{v.li}</li>
             ))}
           </ul>
         </div>
       </div>
-      <Modal></Modal>
+      <Modal open={openModal}>
+        <EggDino onClose={() => setOpenModal(false)} />
+      </Modal>
     </Wrapper>
   );
 };

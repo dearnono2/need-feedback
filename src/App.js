@@ -1,7 +1,6 @@
 import React from "react";
 // import { Switch, Route, NavLink } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
-import styled from "styled-components";
 
 // common
 import Header from "./components/common/Header";

@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-import EggDinoModal from "./EggDinoModal";
+// import EggDinoModal from "./EggDinoModal";
 
-export const Modal = () => {
-  return (
-    <ModalContainer>
-      <EggDinoModal></EggDinoModal>
-    </ModalContainer>
-  );
+export const Modal = ({ open, children }) => {
+  if (!open) return null;
+  return <ModalContainer>{children}</ModalContainer>;
 };
 
 const ModalContainer = styled.div`
