@@ -8,6 +8,21 @@ export default function SyncSlider() {
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
 
+  const thumbnail = [
+    {
+      src: "images/pc/5.media/img_media_thumbnail_1.webp",
+    },
+    {
+      src: "images/pc/5.media/img_media_thumbnail_2.webp",
+    },
+    {
+      src: "images/pc/5.media/img_media_thumbnail_3.webp",
+    },
+    {
+      src: "images/pc/5.media/img_media_thumbnail_4.webp",
+    },
+  ];
+
   return (
     <Slick>
       <div className="text-container">
@@ -21,37 +36,16 @@ export default function SyncSlider() {
         arrows={false}
         fade={true}
       >
-        {/* 이거 맵 함수로 리팩토링 해 보세요 1 */}
-        <div className="youtube-thumnail">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_1.webp"
-            alt="youtube thumnail"
-          />
-          <button className="youtube-thumnail-btn"></button>
-        </div>
-        <div className="youtube-thumnail">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_2.webp"
-            alt="youtube thumnail"
-          />
-          <button className="youtube-thumnail-btn"></button>
-        </div>
-
-        <div className="youtube-thumnail">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_3.webp"
-            alt="youtube thumnail"
-          />
-          <button className="youtube-thumnail-btn"></button>
-        </div>
-
-        <div className="youtube-thumnail">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_4.webp"
-            alt="youtube thumnail"
-          />
-          <button className="youtube-thumnail-btn"></button>
-        </div>
+        {/* (완료) 이거 맵 함수로 리팩토링 해 보세요 1 */}
+        {thumbnail.map((v, i) => (
+          <div className="youtube-thumnail" key={i}>
+            <img
+              src={`images/pc/5.media/img_media_thumbnail_${i + 1}.webp`}
+              alt="youtube thumnail"
+            />
+            <button className="youtube-thumnail-btn"></button>
+          </div>
+        ))}
         {/* ----------- */}
       </Slider>
 
@@ -62,35 +56,13 @@ export default function SyncSlider() {
         swipeToSlide={true}
         focusOnSelect={true}
       >
-        {/* 이거 맵 함수로 리팩토링 해 보세요 1 */}
-        <div className="preview-item">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_1.webp"
-            alt="preview"
-          />
-          <span className="preview-title">Launching</span>
-        </div>
-        <div className="preview-item">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_2.webp"
-            alt="preview"
-          />
-          <span className="preview-title">Launching</span>
-        </div>
-        <div className="preview-item">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_3.webp"
-            alt="preview"
-          />
-          <span className="preview-title">Launching</span>
-        </div>
-        <div className="preview-item">
-          <img
-            src="images/pc/5.media/img_media_thumbnail_4.webp"
-            alt="preview"
-          />
-          <span className="preview-title">Launching</span>
-        </div>
+        {/* (완료) 이거 맵 함수로 리팩토링 해 보세요 1 */}
+        {thumbnail.map((v, i) => (
+          <div className="preview-item" key={i}>
+            <img src={v.src} alt="preview" />
+            <span className="preview-title">Launching</span>
+          </div>
+        ))}
         {/* ----------- */}
       </Slider>
     </Slick>

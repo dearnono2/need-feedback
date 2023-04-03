@@ -9,6 +9,36 @@ import "swiper/css/pagination";
 import styled from "styled-components";
 
 const Characters = () => {
+  const swiperSlides = [
+    {
+      src: "images/pc/4.character/img_character_watermelon.webp",
+      alt: "watermelon dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_orange.webp",
+      alt: "orange dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_banana.webp",
+      alt: "banana dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_blueberry.webp",
+      alt: "blueberry dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_coconut.webp",
+      alt: "coconut dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_pineapple.webp",
+      alt: "pineapple dino",
+    },
+    {
+      src: "images/pc/4.character/img_character_baby.webp",
+      alt: "baby dino",
+    },
+  ];
   return (
     <Wrapper>
       <div className="text-container">
@@ -24,49 +54,12 @@ const Characters = () => {
         speed={1000}
         className="mySwiper"
       >
-        {/* 이거 맵함수로 리팩토링 해 보세요 */}
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_watermelon.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_orange.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_banana.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_blueberry.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_coconut.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_pineapple.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="images/pc/4.character/img_character_baby.webp"
-            alt="watermelon character"
-          />
-        </SwiperSlide>
+        {/* (완료) 이거 맵함수로 리팩토링 해 보세요 */}
+        {swiperSlides.map((v, i) => (
+          <SwiperSlide key={i}>
+            <img src={v.src} alt={v.alt} />
+          </SwiperSlide>
+        ))}
         {/* ------------- */}
         {/* pagination을 여기에 추가하니까 bullet들이 클릭이 안된다... */}
         <div className="icon-dice">

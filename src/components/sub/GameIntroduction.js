@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useMemo } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import * as Anime from "../../Anime";
 // gsap
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -66,7 +66,7 @@ const GameIntroduction = () => {
   const component = useRef();
   const slider = useRef();
 
-  const goToSlide = (e) => {};
+  // const goToSlide = (e) => {};
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {

@@ -2,6 +2,45 @@ import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = () => {
+  const links = [
+    {
+      to: "preregistration",
+      title: "Pre-Registration",
+    },
+    {
+      to: "gameintroduction",
+      title: "Game Introduction",
+    },
+    {
+      to: "gameintroductionCopy",
+      title: "Game Introduction2",
+    },
+    {
+      to: "characters",
+      title: "Characters",
+    },
+    {
+      to: "media",
+      title: "Media",
+    },
+  ];
+  const utilIcons = [
+    {
+      href: "https://www.facebook.com/FruttiDino",
+      src: "images/ico_facebook.svg",
+      alt: "facebook icon",
+    },
+    {
+      href: "https://discord.com/invite/Vvhr9TCeHq",
+      src: "images/ico_discord.svg",
+      alt: "discord icon",
+    },
+    {
+      href: "https://www.youtube.com/@FruttiDinoOfficial",
+      src: "images/ico_youtube.svg",
+      alt: "youtube icon",
+    },
+  ];
   return (
     <Wrapper>
       <div className="snb">
@@ -17,88 +56,31 @@ const Header = () => {
         </h1>
         <nav className="nav">
           <ul className="gnb">
-            {/* 이거 맵함수로 리팩토링 해 보세요 1 */}
-            <li>
-              <NavLink
-                to="/preregistration"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Pre-Registration
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/gameintroduction"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Game Introduction
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/gameintroductionCopy"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Game Introduction2
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/characters"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Characters
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/media"
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Media
-              </NavLink>
-            </li>
+            {/* (완료) 이거 맵함수로 리팩토링 해 보세요 1 */}
+            {links.map((v, i) => (
+              <li key={i}>
+                <NavLink
+                  to={v.to}
+                  className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }
+                >
+                  {v.title}
+                </NavLink>
+              </li>
+            ))}
             {/* ---------- */}
           </ul>
           <ul className="util">
-            {/* 이거 맵함수로 리팩토링 해 보세요 2 */}
-            <li>
-              <a
-                href="https://www.facebook.com/FruttiDino"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src="images/ico_facebook.svg" alt="facebook icon" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://discord.com/invite/Vvhr9TCeHq"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src="images/ico_discord.svg" alt="facebook icon" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@FruttiDinoOfficial"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src="images/ico_youtube.svg" alt="facebook icon" />
-              </a>
-            </li>
+            {/* (완료) 이거 맵함수로 리팩토링 해 보세요 2 */}
+            {utilIcons.map((v, i) => (
+              <li key={i}>
+                <a href={v.href} target="_blank" rel="noreferrer">
+                  <img src={v.src} alt={v.alt} />
+                </a>
+              </li>
+            ))}
+
             {/* ---------- */}
           </ul>
           <span className="menu-bar"></span>

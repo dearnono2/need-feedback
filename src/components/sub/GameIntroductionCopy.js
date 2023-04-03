@@ -33,6 +33,7 @@ export default function GameIntroductionCopy() {
     ref.current.style.transform = "translateX(0vw)";
   };
 
+  // (확인) useMemo는 웬만하면 지양하세요. 불필요한 메모리 저장을 유도합니다
   const chapterSections = useMemo(
     () => [
       {
@@ -62,6 +63,21 @@ export default function GameIntroductionCopy() {
     ],
     []
   );
+
+  const characterIcons = [
+    {
+      idx: 0,
+    },
+    {
+      idx: 1,
+    },
+    {
+      idx: 2,
+    },
+    {
+      idx: 3,
+    },
+  ];
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -94,75 +110,30 @@ export default function GameIntroductionCopy() {
                   />
                 </div>
               </div>
+              {/* (완료) 이거 맵함수 사용해서 리팩토링 해 볼래요?*/}
               <div className="img-character-icon-container">
-                <div
-                  className="character-icon ico00"
-                  onClick={() => moveToNext(0)}
-                >
-                  <img
-                    src="images/pc/3.game-introduction/ico_line1.svg"
-                    alt="icon line"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_1_hover.png"
-                    alt="character icon"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_1.png"
-                    alt="character hover icon"
-                  />
-                </div>
-                <div
-                  className="character-icon ico01"
-                  onClick={() => moveToNext(1)}
-                >
-                  <img
-                    src="images/pc/3.game-introduction/ico_line2.svg"
-                    alt="icon line"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_2_hover.png"
-                    alt="character icon"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_2.png"
-                    alt="character hover icon"
-                  />
-                </div>
-                <div
-                  className="character-icon ico02"
-                  onClick={() => moveToNext(2)}
-                >
-                  <img
-                    src="images/pc/3.game-introduction/ico_line3.svg"
-                    alt="icon line"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_3_hover.png"
-                    alt="character icon"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_3.png"
-                    alt="character hover icon"
-                  />
-                </div>
-                <div
-                  className="character-icon ico03"
-                  onClick={() => moveToNext(3)}
-                >
-                  <img
-                    src="images/pc/3.game-introduction/ico_line4.svg"
-                    alt="icon line"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_4_hover.png"
-                    alt="character icon"
-                  />
-                  <img
-                    src="images/pc/3.game-introduction/img_4.png"
-                    alt="character hover icon"
-                  />
-                </div>
+                {characterIcons.map((v, i) => (
+                  <div
+                    className={`character-icon ico0${i}`}
+                    onClick={() => moveToNext(`${i}`)}
+                    key={i}
+                  >
+                    <img
+                      src={`images/pc/3.game-introduction/ico_line${i + 1}.svg`}
+                      alt="icon line"
+                    />
+                    <img
+                      src={`images/pc/3.game-introduction/img_${
+                        i + 1
+                      }_hover.png`}
+                      alt="character icon"
+                    />
+                    <img
+                      src={`images/pc/3.game-introduction/img_${i + 1}.png`}
+                      alt="character hover icon"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

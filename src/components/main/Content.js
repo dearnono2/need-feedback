@@ -13,20 +13,22 @@ const Content = () => {
         <div className="main-logo">
           <img src="images/img_logo_big.png" alt="frutti dino logo" />
         </div>
-        {/* 이 버튼이 무슨 버튼인가에 대한 텍스트가 없으면 안돼요 1.aria-label 속성 사용하기 2. 텍스트 써 놓고 css로 text-indent:-9999px 처리 */}
-        <button className="youtube-btn"></button>
+        {/* (완료) 이 버튼이 무슨 버튼인가에 대한 텍스트가 없으면 안돼요 1.aria-label 속성 사용하기 2. 텍스트 써 놓고 css로 text-indent:-9999px 처리 */}
+        <button className="youtube-btn" aria-label="youtube link">
+          youtube button
+        </button>
         {/* ------- */}
         <button className="btn-pre-register">
           <span>Pre-Register</span>
         </button>
         <div className="btn-container">
           <div className="link-btn-container">
-            {/* a 태그 또한 마찬가지입니다. */}
-            <a href="/">
-              <img src="images/img_appstore_btn.png" alt="app store link" />
+            {/* (완료) a 태그 또한 마찬가지입니다. */}
+            <a href="/" aria-label="apple store button">
+              <img src="images/img_appstore_btn.png" alt="app store" />
             </a>
-            <a href="/">
-              <img src="images/img_googleplay_btn.png" alt="google play link" />
+            <a href="/" aria-label="google play button">
+              <img src="images/img_googleplay_btn.png" alt="google play" />
             </a>
           </div>
         </div>
@@ -72,6 +74,7 @@ const Wrapper = styled.div`
       height: 100px;
       background: url(images/pc/1.main/img_playbtn.png) no-repeat center;
       background-size: cover;
+      text-indent: -9999px;
     }
     .btn-pre-register {
       width: 275px;
