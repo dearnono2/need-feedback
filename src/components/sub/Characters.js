@@ -24,6 +24,7 @@ const Characters = () => {
         speed={1000}
         className="mySwiper"
       >
+        {/* 이거 맵함수로 리팩토링 해 보세요 */}
         <SwiperSlide>
           <img
             src="images/pc/4.character/img_character_watermelon.webp"
@@ -66,6 +67,7 @@ const Characters = () => {
             alt="watermelon character"
           />
         </SwiperSlide>
+        {/* ------------- */}
         {/* pagination을 여기에 추가하니까 bullet들이 클릭이 안된다... */}
         <div className="icon-dice">
           <img
