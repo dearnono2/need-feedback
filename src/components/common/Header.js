@@ -13,6 +13,7 @@ const Header = () => {
         </h1>
         <nav className="nav">
           <ul className="gnb">
+            {/* 이거 맵함수로 리팩토링 해 보세요 1 */}
             <li>
               <NavLink
                 to="/preregistration"
@@ -63,8 +64,10 @@ const Header = () => {
                 Media
               </NavLink>
             </li>
+            {/* ---------- */}
           </ul>
           <ul className="util">
+            {/* 이거 맵함수로 리팩토링 해 보세요 2 */}
             <li>
               <a
                 href="https://www.facebook.com/FruttiDino"
@@ -92,6 +95,7 @@ const Header = () => {
                 <img src="images/ico_youtube.svg" alt="facebook icon" />
               </a>
             </li>
+            {/* ---------- */}
           </ul>
           <span className="menu-bar"></span>
         </nav>

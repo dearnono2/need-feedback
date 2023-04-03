@@ -21,6 +21,7 @@ export default function SyncSlider() {
         arrows={false}
         fade={true}
       >
+        {/* 이거 맵 함수로 리팩토링 해 보세요 1 */}
         <div className="youtube-thumnail">
           <img
             src="images/pc/5.media/img_media_thumbnail_1.webp"
@@ -51,6 +52,7 @@ export default function SyncSlider() {
           />
           <button className="youtube-thumnail-btn"></button>
         </div>
+        {/* ----------- */}
       </Slider>
 
       <Slider
@@ -60,6 +62,7 @@ export default function SyncSlider() {
         swipeToSlide={true}
         focusOnSelect={true}
       >
+        {/* 이거 맵 함수로 리팩토링 해 보세요 1 */}
         <div className="preview-item">
           <img
             src="images/pc/5.media/img_media_thumbnail_1.webp"
@@ -88,6 +91,7 @@ export default function SyncSlider() {
           />
           <span className="preview-title">Launching</span>
         </div>
+        {/* ----------- */}
       </Slider>
     </Slick>
   );

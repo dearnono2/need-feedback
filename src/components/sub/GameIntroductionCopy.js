@@ -33,6 +33,7 @@ export default function GameIntroductionCopy() {
     ref.current.style.transform = "translateX(0vw)";
   };
 
+  // useMemo는 웬만하면 지양하세요. 불필요한 메모리 저장을 유도합니다
   const chapterSections = useMemo(
     () => [
       {
@@ -94,6 +95,7 @@ export default function GameIntroductionCopy() {
                   />
                 </div>
               </div>
+              {/* 이거 맵함수 사용해서 리팩토링 해 볼래요?*/}
               <div className="img-character-icon-container">
                 <div
                   className="character-icon ico00"
@@ -164,6 +166,7 @@ export default function GameIntroductionCopy() {
                   />
                 </div>
               </div>
+              {/* ------- */}
             </div>
           </div>
           <div className="panel sec1">
