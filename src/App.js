@@ -11,7 +11,7 @@ import Main from "./components/main/Main";
 // subpages
 import PreRegistration from "./components/sub/PreRegistration";
 import GameIntroduction from "./components/sub/GameIntroduction";
-import GameIntroductionCopy from "./components/sub/GameIntroductionCopy";
+// import GameIntroductionScroll from "./components/sub/GameIntroductionScroll";
 import Characters from "./components/sub/Characters";
 import Media from "./components/sub/Media";
 
@@ -31,10 +31,10 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/preregistration" element={<PreRegistration />} />
         <Route path="/gameintroduction" element={<GameIntroduction />} />
-        <Route
-          path="/gameintroductionCopy"
-          element={<GameIntroductionCopy />}
-        />
+        {/* <Route
+          path="/gameintroductionscroll"
+          element={<GameIntroductionScroll />}
+        /> */}
         <Route path="/characters" element={<Characters />} />
         <Route path="/Media" element={<Media />} />
       </Routes>

@@ -12,10 +12,6 @@ const Header = () => {
       title: "Game Introduction",
     },
     {
-      to: "gameintroductionCopy",
-      title: "Game Introduction2",
-    },
-    {
       to: "characters",
       title: "Characters",
     },
@@ -80,7 +76,6 @@ const Header = () => {
                 </a>
               </li>
             ))}
-
             {/* ---------- */}
           </ul>
           <span className="menu-bar"></span>
