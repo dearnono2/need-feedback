@@ -4,7 +4,11 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <Wrapper>
-      <div className="snb"></div>
+      <div className="snb">
+        <a href="https://www.fruttidino.com/" target="_blank" rel="noreferrer">
+          <img src="images/img_snb_logo.svg" alt="snb logo" />
+        </a>
+      </div>
       <div className="inner">
         <h1>
           <Link to={"/"}>
@@ -114,9 +118,21 @@ const Wrapper = styled.header`
   background-color: "blue";
   z-index: 10;
   .snb {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 32px;
     background: rgba(0, 0, 0, 0.7);
+    a {
+      width: 82px;
+      height: 14px;
+      margin-left: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
   .inner {
     display: flex;
@@ -150,6 +166,9 @@ const Wrapper = styled.header`
           line-height: 28px;
           color: #fff;
           text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          a:hover {
+            color: #ffe99a;
+          }
           a.active {
             color: #ffc700;
           }
