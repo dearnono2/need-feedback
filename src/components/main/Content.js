@@ -24,10 +24,10 @@ const Content = () => {
         <div className="btn-container">
           <div className="link-btn-container">
             {/* (완료) a 태그 또한 마찬가지입니다. */}
-            <a href="/" aria-label="apple store button">
+            <a href="/" aria-label="apple store">
               <img src="images/img_appstore_btn.png" alt="app store" />
             </a>
-            <a href="/" aria-label="google play button">
+            <a href="/" aria-label="google play">
               <img src="images/img_googleplay_btn.png" alt="google play" />
             </a>
           </div>
