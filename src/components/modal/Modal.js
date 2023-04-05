@@ -3,8 +3,12 @@ import styled from "styled-components";
 // import EggDinoModal from "./EggDinoModal";
 
 export const Modal = ({ open, children }) => {
-  if (!open) return null;
-  return <ModalContainer>{children}</ModalContainer>;
+  // 기존 코드
+  // if (!open) return null;
+  // return <ModalContainer>{children}</ModalContainer>;
+
+  // 팀장님 코드
+  if (open) return <ModalContainer>{children}</ModalContainer>;
 };
 
 const ModalContainer = styled.div`
