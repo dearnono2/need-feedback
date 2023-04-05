@@ -65,20 +65,20 @@ export default function GameIntroduction() {
   );
 
   // 이런 의미없는 빈 배열을 만들 때는 array 함수를 사용하는것이 좋다! 116줄 참고
-  const characterIcons = [
-    {
-      idx: 0,
-    },
-    {
-      idx: 1,
-    },
-    {
-      idx: 2,
-    },
-    {
-      idx: 3,
-    },
-  ];
+  // const characterIcons = [
+  //   {
+  //     idx: 0,
+  //   },
+  //   {
+  //     idx: 1,
+  //   },
+  //   {
+  //     idx: 2,
+  //   },
+  //   {
+  //     idx: 3,
+  //   },
+  // ];
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -200,6 +200,7 @@ export default function GameIntroduction() {
                   <span>Back</span>
                 </div>
               </div>
+              {/* autoplay-progress */}
               <div className="autoplay-progress" slot="container-end">
                 <svg viewBox="0 0 48 48" ref={progressCircle}>
                   <circle cx="24" cy="24" r="20"></circle>

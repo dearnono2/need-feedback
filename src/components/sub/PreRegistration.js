@@ -11,7 +11,7 @@ import Gifts from "../../lottie/birthday-gifts.json";
 import { useLayoutEffect, useRef, useMemo, useState } from "react";
 
 const PreRegistration = () => {
-  // 버튼 클릭하면 팝업 튀어나오게
+  // 버튼 클릭하면 팝업
   const [openModal, setOpenModal] = useState(false);
 
   const presentDino = useRef();
